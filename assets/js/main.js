@@ -33,15 +33,23 @@ btnEl.addEventListener('click', function(){
     ticket_cd.innerHTML = parseInt((Math.random() * 100000 + 1));
 
     //calcolo il prezzo del biglietto
-    switch (ticket_age) {
+    switch (ticket_age.value) {
 
-        case 1:
+        case "minorenne":
             tot = (kmEl * kmPrice) * 20 / 100;
             console.log(tot.toFixed(2));
         break;
+
+        case "maggiorenne":
+            tot = (kmEl * kmPrice);
+            console.log(tot.toFixed(2));
+        break;
+
+        case "over65":
+            tot = (kmEl * kmPrice) * 40 / 100;
+            console.log(tot.toFixed(2));
+        break;
     }
-    /* tot = (kmEl * kmPrice) * 20 / 100;
-    console.log(tot.toFixed(2)); */
     ticket_tot.innerHTML = tot.toFixed(2);
     
 })
