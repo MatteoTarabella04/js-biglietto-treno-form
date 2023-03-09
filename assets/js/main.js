@@ -32,8 +32,8 @@ btnEl_clear.addEventListener('click', function(){
     console.log('clicked');
     
     // resetto i valori inseriti dall'utente
-    const nameEl = document.getElementById("nameInput").value = '';
-    const kmEl = document.getElementById("kmInput").value = '';
+    nameEl = document.getElementById("nameInput").value = '';
+    kmEl = document.getElementById("kmInput").value = '';
 })
 
 
