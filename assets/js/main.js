@@ -17,3 +17,15 @@ btnEl.addEventListener('click', function(){
     const kmEl = document.getElementById("kmInput").value;
     console.log(nameEl, kmEl); 
 })
+
+//seleziono il bottone del reset
+const btnEl_clear = document.querySelector('button.clear');
+
+// al click creo una funzione che mi resetta ciò che ha inserito l'utente 
+btnEl_clear.addEventListener('click', function(){
+    console.log('clicked');
+    
+    // resetto i valori inseriti dall'utente
+    const nameEl = document.getElementById("nameInput").value = '';
+    const kmEl = document.getElementById("kmInput").value = '';
+})
