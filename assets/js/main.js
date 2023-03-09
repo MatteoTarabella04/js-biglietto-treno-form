@@ -11,6 +11,11 @@ const btnEl = document.querySelector('button.sub');
 // dichiaro la variabile per la stampa del nome
 const ticket_n = document.getElementById('ticket_name');
 
+//dichiaro le variabili per il completamento del boglietto (descrizione)
+const ticket_c = document.getElementById('ticket_coach');
+const ticket_cd = document.getElementById('ticket_code');
+const ticket_tot = document.getElementById('ticket_cost');
+
 // al click creo una funzione che mi legge cosa ha inserito l'utente 
 btnEl.addEventListener('click', function(){
     console.log('clicked');
@@ -22,6 +27,8 @@ btnEl.addEventListener('click', function(){
 
     //inserisco i dati dell'utente nel biglietto
     ticket_n.innerHTML = nameEl;
+    ticket_c.innerHTML = parseInt((Math.random() * 9 + 1));
+    ticket_cd.innerHTML = parseInt((Math.random() * 100000 + 1));
 })
 
 //seleziono il bottone del reset
