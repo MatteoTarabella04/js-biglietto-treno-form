@@ -13,6 +13,7 @@ const btnEl = document.querySelector('button.sub');
 const ticket_n = document.getElementById('ticket_name');
 
 //dichiaro le variabili per il completamento del boglietto (descrizione)
+const ticket_type_element = document.getElementById('ticket_age');
 const ticket_c = document.getElementById('ticket_coach');
 const ticket_cd = document.getElementById('ticket_code');
 const ticket_tot = document.getElementById('ticket_cost');
@@ -38,19 +39,23 @@ btnEl.addEventListener('click', function(){
         case "minorenne":
             tot = (kmEl * kmPrice) * 20 / 100;
             console.log(tot.toFixed(2));
+            ticket_type_element.innerHTML = 'Biglietto Ridotto'
         break;
 
         case "maggiorenne":
             tot = (kmEl * kmPrice);
             console.log(tot.toFixed(2));
+            ticket_type_element.innerHTML = 'Biglietto Standard'
         break;
 
         case "over65":
             tot = (kmEl * kmPrice) * 40 / 100;
             console.log(tot.toFixed(2));
+            ticket_type_element.innerHTML = 'Biglietto Ridotto Over 65'
         break;
     }
     ticket_tot.innerHTML = tot.toFixed(2);
+
     
 })
 
