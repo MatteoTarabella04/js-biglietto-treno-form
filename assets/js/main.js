@@ -17,7 +17,8 @@ const ticket_type_element = document.getElementById('ticket_age');
 const ticket_c = document.getElementById('ticket_coach');
 const ticket_cd = document.getElementById('ticket_code');
 const ticket_tot = document.getElementById('ticket_cost');
-const ticket_age = document.getElementById('age_range')
+const ticket_age = document.getElementById('age_range');
+const ticket = document.getElementById('hide');
 
 // al click creo una funzione che mi legge cosa ha inserito l'utente 
 btnEl.addEventListener('click', function(){
@@ -54,8 +55,10 @@ btnEl.addEventListener('click', function(){
             ticket_type_element.innerHTML = 'Biglietto Ridotto Over 65'
         break;
     }
-    ticket_tot.innerHTML = tot.toFixed(2);
+    ticket_tot.innerHTML = `${tot.toFixed(2)} €`;
 
+    //faccio apparire il biglietto
+    ticket.className = "d-block";
     
 })
 
@@ -69,6 +72,9 @@ btnEl_clear.addEventListener('click', function(){
     // resetto i valori inseriti dall'utente
     nameEl = document.getElementById("nameInput").value = '';
     kmEl = document.getElementById("kmInput").value = '';
+
+    //faccio sparire il biglietto dopo aver cliccato annulla
+    ticket.className = "d-none";
 })
 
 
