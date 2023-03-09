@@ -2,6 +2,7 @@
 let nameInput;
 let kmInput;
 let age;
+let tot;
 
 const kmPrice = 0.21;
 
@@ -15,6 +16,7 @@ const ticket_n = document.getElementById('ticket_name');
 const ticket_c = document.getElementById('ticket_coach');
 const ticket_cd = document.getElementById('ticket_code');
 const ticket_tot = document.getElementById('ticket_cost');
+const ticket_age = document.getElementById('age_range')
 
 // al click creo una funzione che mi legge cosa ha inserito l'utente 
 btnEl.addEventListener('click', function(){
@@ -29,6 +31,19 @@ btnEl.addEventListener('click', function(){
     ticket_n.innerHTML = nameEl;
     ticket_c.innerHTML = parseInt((Math.random() * 9 + 1));
     ticket_cd.innerHTML = parseInt((Math.random() * 100000 + 1));
+
+    //calcolo il prezzo del biglietto
+    switch (ticket_age) {
+
+        case 1:
+            tot = (kmEl * kmPrice) * 20 / 100;
+            console.log(tot.toFixed(2));
+        break;
+    }
+    /* tot = (kmEl * kmPrice) * 20 / 100;
+    console.log(tot.toFixed(2)); */
+    ticket_tot.innerHTML = tot.toFixed(2);
+    
 })
 
 //seleziono il bottone del reset
