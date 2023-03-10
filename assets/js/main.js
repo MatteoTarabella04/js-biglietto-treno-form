@@ -10,14 +10,14 @@ const kmPrice = 0.21;
 const btnEl = document.querySelector('button.sub');
 
 // dichiaro la variabile per la stampa del nome
-const ticket_n = document.getElementById('ticket_name');
+const ticketNameElement = document.getElementById('ticket_name');
 
 //dichiaro le variabili per il completamento del boglietto (descrizione)
-const ticket_type_element = document.getElementById('ticket_age');
-const ticket_c = document.getElementById('ticket_coach');
-const ticket_cd = document.getElementById('ticket_code');
-const ticket_tot = document.getElementById('ticket_cost');
-const ticket_age = document.getElementById('age_range');
+const ticketTypeElement = document.getElementById('ticket_age');
+const ticketCoachElement = document.getElementById('ticket_coach');
+const ticketCodeElement = document.getElementById('ticket_code');
+const ticketFinalPriceElement = document.getElementById('ticket_cost');
+const ticketAgeElement = document.getElementById('age_range');
 const ticket = document.getElementById('hide');
 
 // al click creo una funzione che mi legge cosa ha inserito l'utente 
@@ -30,32 +30,32 @@ btnEl.addEventListener('click', function(){
     console.log(nameEl, kmEl); 
 
     //inserisco i dati dell'utente nel biglietto
-    ticket_n.innerHTML = nameEl;
-    ticket_c.innerHTML = parseInt((Math.random() * 9 + 1));
-    ticket_cd.innerHTML = parseInt((Math.random() * 100000 + 1));
+    ticketNameElement.innerHTML = nameEl;
+    ticketCoachElement.innerHTML = parseInt((Math.random() * 9 + 1));
+    ticketCodeElement.innerHTML = parseInt((Math.random() * 100000 + 1));
 
     //calcolo il prezzo del biglietto
-    switch (ticket_age.value) {
+    switch (ticketAgeElement.value) {
 
         case "minorenne":
             tot = (kmEl * kmPrice) * 20 / 100;
             console.log(tot.toFixed(2));
-            ticket_type_element.innerHTML = 'Biglietto Ridotto'
+            ticketTypeElement.innerHTML = 'Biglietto Ridotto'
         break;
 
         case "maggiorenne":
             tot = (kmEl * kmPrice);
             console.log(tot.toFixed(2));
-            ticket_type_element.innerHTML = 'Biglietto Standard'
+            ticketTypeElement.innerHTML = 'Biglietto Standard'
         break;
 
         case "over65":
             tot = (kmEl * kmPrice) * 40 / 100;
             console.log(tot.toFixed(2));
-            ticket_type_element.innerHTML = 'Biglietto Ridotto Over 65'
+            ticketTypeElement.innerHTML = 'Biglietto Ridotto Over 65'
         break;
     }
-    ticket_tot.innerHTML = `${tot.toFixed(2)} €`;
+    ticketFinalPriceElement.innerHTML = `${tot.toFixed(2)} €`;
 
     //faccio apparire il biglietto
     ticket.className = "d-block";
